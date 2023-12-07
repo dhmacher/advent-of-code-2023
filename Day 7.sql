@@ -1065,7 +1065,7 @@ WITH hands AS (
     --- Translating the traditional card notations, T, J, Q, K, A to hexadecimal
     --- (a, b, c, d, e) makes the hands alphabetically sortable.
     ---
-    --- For part 2, the J card ranks now lowest, so we'll give it a 1.
+    --- For part 2, the J card now ranks lowest, so we'll give it a 1.
     SELECT source.ordinal, TRANSLATE(x.hand, 'TJQKA', 'a1cde') AS hand, x.bid
     FROM STRING_SPLIT(REPLACE(@input, CHAR(13), ''), CHAR(10), 1) AS source
     CROSS APPLY (
