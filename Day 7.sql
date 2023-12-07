@@ -1077,29 +1077,29 @@ WITH hands AS (
 hands2 AS (
     SELECT hands.ordinal, hands.hand, p.hand_pattern, hands.bid,
            (CASE p.hand_pattern
-            WHEN '5' THEN 6             --- Five of a kind
             WHEN ',*5' THEN 6
             WHEN '1,*4' THEN 6
             WHEN '2,*3' THEN 6
             WHEN '3,*2' THEN 6
             WHEN '4,*1' THEN 6
+            WHEN '5' THEN 6             --- Five of a kind
 
-            WHEN '4,1' THEN 5           --- Four of a kind
             WHEN '1,1,*3' THEN 5
             WHEN '2,1,*2' THEN 5
             WHEN '3,1,*1' THEN 5
+            WHEN '4,1' THEN 5           --- Four of a kind
 
-            WHEN '3,2' THEN 4           --- Full house
             WHEN '2,2,*1' THEN 4
+            WHEN '3,2' THEN 4           --- Full house
 
-            WHEN '3,1,1' THEN 3         --- Three of a kind
             WHEN '1,1,1,*2' THEN 3
             WHEN '2,1,1,*1' THEN 3
+            WHEN '3,1,1' THEN 3         --- Three of a kind
 
             WHEN '2,2,1' THEN 2         --- Two pair
 
-            WHEN '2,1,1,1' THEN 1       --- One pair
             WHEN '1,1,1,1,*1' THEN 1
+            WHEN '2,1,1,1' THEN 1       --- One pair
 
             ELSE 0                      --- High card / other
             END) AS [type]
