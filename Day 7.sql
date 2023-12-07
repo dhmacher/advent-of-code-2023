@@ -1048,7 +1048,7 @@ hands2 AS (
 
 SELECT SUM(winnings)
 FROM (
-    SELECT *, bid*ROW_NUMBER() OVER (ORDER BY [type], hand) AS winnings
+    SELECT bid*ROW_NUMBER() OVER (ORDER BY [type], hand) AS winnings
     FROM hands2
 ) AS sub;
 
@@ -1129,6 +1129,6 @@ hands2 AS (
 
 SELECT SUM(winnings)
 FROM (
-    SELECT *, bid*ROW_NUMBER() OVER (ORDER BY [type], hand) AS winnings
+    SELECT bid*ROW_NUMBER() OVER (ORDER BY [type], hand) AS winnings
     FROM hands2
 ) AS sub;
