@@ -6,7 +6,7 @@ DECLARE @input varchar(max)='sbckcf-,svx-,jh-,hfx=2,xnd-,cx-,zd=6,hm-,bgf-,lkn-,
 
 
 --- Part 1:
-/*
+
 WITH cte AS (
     SELECT 0 AS offset,
            0 AS [hash],
@@ -25,7 +25,7 @@ WITH cte AS (
 SELECT SUM([hash])
 FROM cte
 WHERE remain='';
-*/
+
 
 
 
